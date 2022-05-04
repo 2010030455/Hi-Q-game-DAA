@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Solitaire</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dist/main.min.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Hi-Q game</h1>
+        <div class="menu">
+            <select id="patterns" onchange="change_pattern();"></select>
+            <span class="item" id="start_timer" onclick="start_timer();">start timer</span> |
+            <span class="item" id="stop_timer" onclick="stop_timer();">stop timer</span> |
+            <span class="item disabled" id="undo" onclick="undo();">undo</span> |
+            <span class="item" id="reset" onclick="reset();">reset</span> |
+            <span class="item" id="replay" onclick="replay();">replay</span> | 
+            <span class="item" onclick="show_rules();">rules</span> | 
+            <a target="_blank" href="https://github.com/" class="source">source</a>
+            <span class="item" id="timer"></span>
+        </div>
+        <div id="main-section" >
+            <div id="board-container"></div>
+            <div id="rules" class="hide" onclick="hide_rules();">
+                <span onclick="hide_rules();">X</span>
+                <p>
+                    The objective is to remove every piece (peg) from the board except one. 
+                    A valid move is to jump a peg over an adjacent peg into a hole two positions away 
+                    and then to remove the jumped peg. Only vertical or horizontal movement is allowed in 
+                    most board types. Diagonal movement is allowed only in the Triagular board. 
+                    For more information visit <a href="https://en.wikipedia.org/wiki/Peg_solitaire" target="_blank">this wiki page</a>.
+                </p>
+            </div>
+        </div>
+        <div id="info-section">
+            <div id="log-container">
+                <ol id="log">
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script src="dist/solitaire.js"></script>
+</body>
+
+</html>
